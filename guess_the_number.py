@@ -38,6 +38,8 @@ def main():
     secret = generate_secret(low, high)
     guesses = 0     #Initialize the guess counter
 
+    print('Welcome to the number guessing game! Guess a number between 1-10')
+
     while True:
         guess = get_guess()
         guesses += 1 # Increment the guess counter when the loop repeats
