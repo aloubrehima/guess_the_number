@@ -47,7 +47,9 @@ def main():
         if result == correct:
             break
 
-    print(f'Thanks, it took you {guesses} guesses.')
+
+    print(f'Thank you user for playing! It took you {guesses} guesses.')
+
 
 
 if __name__ == '__main__':
