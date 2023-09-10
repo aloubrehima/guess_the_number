@@ -4,6 +4,22 @@ correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
 
+def main():
+
+    (low, high) = configure_range()
+    secret = generate_secret(low, high)
+    guesses = 0     #Initialize the guess counter
+
+    while True:
+        guess = get_guess()
+        guesses += 1 # Increment the guess counter when the loop repeats
+        result = check_guess(guess, secret)
+        print(result)
+
+        if result == correct:
+            break
+
+    print(f'Thanks for playing the game! It took you {guesses} guesses.')
 
 def configure_range():
     """ Set the high and low values for the random number """
@@ -31,28 +47,6 @@ def check_guess(guess, secret):
         return too_low
     if guess > secret:
         return too_high
-
-def main():
-
-    (low, high) = configure_range()
-    secret = generate_secret(low, high)
-    guesses = 0     #Initialize the guess counter
-
-    print('Welcome to the number guessing game! Guess a number between 1-10')
-
-    while True:
-        guess = get_guess()
-        guesses += 1 # Increment the guess counter when the loop repeats
-        result = check_guess(guess, secret)
-        print(result)
-
-        if result == correct:
-            break
-
-
-    print(f'Thank you user for playing! It took you {guesses} guesses.')
-
-
 
 if __name__ == '__main__':
     main()
